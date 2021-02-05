@@ -10,7 +10,6 @@ from slackeventsapi import SlackEventAdapter
 # Load the Token from .env file
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
-
 # Configure your flask application
 app = Flask(__name__)
 
@@ -26,6 +25,11 @@ client.chat_postMessage(channel='#cps-847-course', text='Send Message Demo')
 # Get Bot ID
 BOT_ID = client.api_call("auth.test")['user_id']
 
+@app.route('/')
+def hello():
+    return 'up'
+
+
 
 # handling Message Events
 @slack_event_adapter.on('message')
@@ -36,7 +40,7 @@ def message(payload):
     user_id = event.get('user')
     text2 = event.get('text')
     if BOT_ID !=user_id:
-        client.chat_postMessage(channel=channel_id, text=text2)
+        client.chat_postMessage(channel=channel_id, text=payload)
 
 # Run the webserver micro-service
 if __name__ == "__main__":
