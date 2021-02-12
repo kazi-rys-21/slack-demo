@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.com/kazi-rys-21/slack-demo.svg?branch=master)](https://travis-ci.com/kazi-rys-21/slack-demo)
