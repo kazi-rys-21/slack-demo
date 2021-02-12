@@ -1,6 +1,23 @@
 language: python
 python:
   - "3.7"
-cache: pip
-install: "pip install -r requirement.txt"
-script: python unittest_api.py
+
+stage:
+  - dev
+  - prod
+
+jobs:
+  include:
+    - stage: dev
+      name: test1
+      script: echo "hello world from dev11"
+
+    - script: echo "hello world from dev22"
+      name: test2
+
+    - stage: prod
+      name: test1
+      script: echo "hello world from prod11"
+
+    - script: echo "hello world from prod22"
+      name: test2
