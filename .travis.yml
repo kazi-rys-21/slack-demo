@@ -1,17 +1,9 @@
+
 language: python
 python:
   - "3.7"
   - "2.7"
 cache: pip
 install: "pip install -r requirement.txt"
-
-jobs:
-  include:
-    - name: test1
-      script: echo "hello world from dev11 3.7"
-
-    - name: test2
-      script: echo "hello world from dev22 2.7"
-
-
+script: python unittest_api.py
 
