@@ -8,14 +8,14 @@ jobs:
   include:
     - stage: dev
       name: "test1"
-      script: echo "hello world from dev11"
+      script: echo "test Unit-1"
 
-    - script: echo "hello world from dev22"
+    - script: echo "Test Unit-2"
       name: test2
 
     - stage: prod
       name: test1
-      script: echo "hello world from prod11"
+      script: echo "push to AWS"
 
-    - script: echo "hello world from prod22"
+    - script: echo "Push to Azure"
       name: test2
