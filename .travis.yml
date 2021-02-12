@@ -1,28 +1,22 @@
 language: python
-matrix:
+python:
+  - "3.7"
+stage:
+  - dev
+  - prod
+
+jobs:
   include:
-    - name: "python 3.7 Xenial"
-      dist: xenial
-      python: 3.7
-    - name: "python 3.8 Windows"
-      os: windows
-      language: shell       # 'language: python' is an error on Travis CI Windows
-      before_install: choco install python
-      env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
-    - name: "python 3.7 MacOs"
-      os: osx
-      language: shell       # 'language: python' is an error on Travis CI macOS
-      cache:
-        directories:
-          - "$HOME/Library/Caches/Homebrew"
-          - "$HOME/Library/Caches/pip"
-      addons:
-        homebrew:
-          #update: true
-          packages: python3
-      before_install:
-        - python3 -m pip install --upgrade virtualenv
-        - virtualenv -p python3 --system-site-packages "$HOME/venv"
-        - source "$HOME/venv/bin/activate"
-script:
-  - python --version
+    - stage: dev
+      name: "test1"
+      script: echo "hello world from dev11"
+
+    - script: echo "hello world from dev22"
+      name: test2
+
+    - stage: prod
+      name: test1
+      script: echo "hello world from prod11"
+
+    - script: echo "hello world from prod22"
+      name: test2
