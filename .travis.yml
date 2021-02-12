@@ -1,6 +1,7 @@
 language: python
 python:
   - "3.7"
+  - "3.6"
 
 stage:
   - dev
@@ -9,6 +10,7 @@ stage:
 jobs:
   include:
     - stage: dev
+
       name: test1
       script: echo "hello world from dev11"
 
