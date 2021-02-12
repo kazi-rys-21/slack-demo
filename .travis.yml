@@ -1,10 +1,7 @@
 language: python
 python:
   - "3.7"
-  - "3.6"
-
-cache: pip
-install: "pip install -r requirement.txt"
+  - "2.7"
 
 stage:
   - dev
@@ -13,16 +10,20 @@ stage:
 jobs:
   include:
     - stage: dev
-
       name: test1
-      script: echo "hello world from dev11"
+      python: 3.7
+      script: echo "hello world from dev11 3.7"
 
-    - script: echo "hello world from dev22"
-      name: test2
+    - name: test2
+      script: echo "hello world from dev22 2.7"
+      python: 2.7
+
 
     - stage: prod
       name: test1
-      script: echo "hello world from prod11"
+      python: 3.7
+      script: echo "hello world from prod11 3.7"
 
     - script: echo "hello world from prod22"
+      python: 2.7
       name: test2
