@@ -10,12 +10,12 @@ jobs:
       name: "test1"
       script: echo "test Unit-1"
 
-    - script: echo "Test Unit-2"
+    - script: echo11 "Test Unit-2"
       name: test2
 
     - stage: prod
       name: test1
-      script: echo11 "push to AWS"
+      script: echo "push to AWS"
 
     - script: echo "Push to Azure"
       name: test2
