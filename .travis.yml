@@ -6,17 +6,5 @@ python:
 cache: pip
 install: "pip install -r requirement.txt"
 
-stage:
-  - dev
-  - prod
+script: python unittest_api.py
 
-
-jobs:
-  include:
-    - stage: dev
-      script: python unittest_api.py
-      name: test2
-
-    - stage: prod
-      name: test1
-      script: echo "hello world from prod"
