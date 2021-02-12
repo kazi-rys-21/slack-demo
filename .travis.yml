@@ -2,6 +2,8 @@ language: python
 python:
   - "3.7"
   - "2.7"
+cache: pip
+install: "pip install -r requirement.txt"
 
 jobs:
   include:
