@@ -27,4 +27,3 @@ matrix:
 install: pip install wheel pillow pytest pdfrw pikepdf
 script:
   - python --version
-  - python -m pytest
