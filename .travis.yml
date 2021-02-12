@@ -4,7 +4,6 @@ python:
 stage:
   - dev
   - prod
-
 jobs:
   include:
     - stage: dev
