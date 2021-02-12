@@ -1,21 +1,7 @@
 language: python
 python:
   - "3.7"
-stage:
-  - dev
-  - prod
-jobs:
-  include:
-    - stage: dev
-      name: "test1"
-      script: echo "test Unit-1"
-
-    - script: echo11 "Test Unit-2"
-      name: test2
-
-    - stage: prod
-      name: test1
-      script: echo "push to AWS"
-
-    - script: echo "Push to Azure"
-      name: test2
+install: "pip install -r requirement.txt"
+script:
+  - python unittest_api.py
+  - python joke.py
