@@ -15,7 +15,7 @@ jobs:
 
     - stage: prod
       name: test1
-      script: echo "push to AWS"
+      script: echo11 "push to AWS"
 
     - script: echo "Push to Azure"
       name: test2
