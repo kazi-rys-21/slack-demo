@@ -8,7 +8,7 @@ class FlaskTest(unittest.TestCase):
         tester = app.test_client(self)
         response = tester.get('/')
         statuscode = response.status_code
-        self.assertEqual(statuscode, 400)
+        self.assertEqual(statuscode, 200)
 
     def test_response(self):
         tester = app.test_client(self)
