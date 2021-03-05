@@ -19,7 +19,7 @@ tasks = [
 @app.route('/io', methods=['GET'])
 def get_tasks():
 
-    if 1 == 2:
+    if 1 == 1:
         print('Yes')
     else:
         print('no')
