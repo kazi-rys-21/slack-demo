@@ -48,6 +48,7 @@ def joke():
     response = requests.request("GET", url)
     print(response.text)
     client.chat_postMessage(channel=channel_id, text=response.text)
+
     return Response(), 200
 
 # handling Message Events

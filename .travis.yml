@@ -2,6 +2,4 @@ language: python
 python:
   - "3.7"
 install: "pip install -r requirement.txt"
-script:
-  - python joke.py
-  - python unittest_api.py
+script: python unittest_api.py
